@@ -25,18 +25,5 @@ struct Utilities {
             print(error.localizedDescription)
             fatalError()
         }
-        
     }
-    
-    
-    static var isRunningOnIpad: Bool {
-        let traitCollection = UIApplication.shared.windows.first!.traitCollection
-        switch (traitCollection.horizontalSizeClass, traitCollection.verticalSizeClass)   {
-        case (UIUserInterfaceSizeClass.regular, UIUserInterfaceSizeClass.regular):
-            return true
-        default:
-            return false
-        }
-    }
-    
 }
