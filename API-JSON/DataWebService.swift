@@ -1,7 +1,14 @@
 import Foundation
 
+public typealias dataResponseHandler = (Result<[Match], Error>)
 
-struct DataWebService {
+public protocol DataWebServiceDelegate {
+    func startEndDateFilter(isUpcoming: Bool) -> (String, String)
+    func fetchLatestMatches(competitionId: Int, completion: @escaping(dataResponseHandler) -> ())
+    func fetchUpcomingMatches(competitionId: Int, completion: @escaping(Result<[Match], Error>) -> ())
+}
+
+struct DataWebService: DataWebServiceDelegate {
     
     static let shared = DataWebService()
     private let urlSession = URLSession.shared
@@ -16,7 +23,7 @@ struct DataWebService {
     
     private init() {}
 
-    private func startEndDateFilter(isUpcoming: Bool) -> (String, String) {
+    internal func startEndDateFilter(isUpcoming: Bool) -> (String, String) {
         let today = Date()
         let tenDays = today.addingTimeInterval(86400 * (isUpcoming ? 10 : -10))
         
@@ -31,9 +38,9 @@ struct DataWebService {
         return formatter
     }()
     
-    //@escaping - has to be escaping as its taking time
-    // Asynchronous Execution: When you are executing the closure asynchronously on dispatch queue, the queue will hold the closure in memory for you, to be used in future. In this case you have no idea when the closure will get executed.
-    // Notes: Asynchronously starting a task will directly return on the calling thread without blocking
+    // Asynchronous Execution: We are executing the closure asynchronously on dispatch queue, the queue will hold the closure in memory to be used in future. In this case we have no idea when the closure will get executed.
+    // also note Asynchronously starting a task will directly return on the calling thread without blocking
+
     func fetchLatestMatches(competitionId: Int, completion: @escaping(Result<[Match], Error>) -> ()) {
         let (tenDaysAgoText, todayText) = startEndDateFilter(isUpcoming: false)
         
@@ -65,6 +72,7 @@ struct DataWebService {
         }
     }
     
+    //@escaping - This has to be escaping closure as it takes time over network
     func fetchData<D: Decodable>(request: URLRequest, completion: @escaping(Result<D, Error>) -> ()) {
         var urlRequest = request
         urlRequest.addValue(apiKey, forHTTPHeaderField: "X-Auth-Token")

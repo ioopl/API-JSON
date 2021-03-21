@@ -23,6 +23,8 @@
 		BCA050322604CF6300C63BEF /* Competition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA050312604CF6300C63BEF /* Competition.swift */; };
 		BCA050962606A9EB00C63BEF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA050952606A9EB00C63BEF /* HomeViewController.swift */; };
 		BCAC67802607809C0038821F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAC677F2607809C0038821F /* SecondViewController.swift */; };
+		BCAC6793260793E60038821F /* FakeDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAC6792260793E60038821F /* FakeDataService.swift */; };
+		BCAC679E2607FC520038821F /* FakeModelStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAC679D2607FC520038821F /* FakeModelStubs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		BCA050312604CF6300C63BEF /* Competition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Competition.swift; sourceTree = "<group>"; };
 		BCA050952606A9EB00C63BEF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BCAC677F2607809C0038821F /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		BCAC6792260793E60038821F /* FakeDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDataService.swift; sourceTree = "<group>"; };
+		BCAC679D2607FC520038821F /* FakeModelStubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeModelStubs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				BCA04FE42603B86F00C63BEF /* API_JSONTests.swift */,
+				BCAC6792260793E60038821F /* FakeDataService.swift */,
 				BCA04FE62603B86F00C63BEF /* Info.plist */,
 			);
 			path = "API-JSONTests";
@@ -156,6 +161,7 @@
 				BCA0501D2604C6F300C63BEF /* Player.swift */,
 				BCA050272604CCAA00C63BEF /* MatchListViewModel.swift */,
 				BCA050312604CF6300C63BEF /* Competition.swift */,
+				BCAC679D2607FC520038821F /* FakeModelStubs.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -300,6 +306,7 @@
 				BCA050232604C73000C63BEF /* Utilities.swift in Sources */,
 				BCA050282604CCAA00C63BEF /* MatchListViewModel.swift in Sources */,
 				BCA050962606A9EB00C63BEF /* HomeViewController.swift in Sources */,
+				BCAC679E2607FC520038821F /* FakeModelStubs.swift in Sources */,
 				BCA050142604C68600C63BEF /* Match.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCAC6793260793E60038821F /* FakeDataService.swift in Sources */,
 				BCA04FE52603B86F00C63BEF /* API_JSONTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

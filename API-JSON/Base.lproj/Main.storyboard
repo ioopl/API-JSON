@@ -28,7 +28,7 @@
         <!--Latest-->
         <scene sceneID="diu-dE-VII">
             <objects>
-                <tableViewController id="vgK-3S-DL8" customClass="HomeViewController" customModule="API_JSON" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="HomeViewController" id="vgK-3S-DL8" customClass="HomeViewController" customModule="API_JSON" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GgA-5k-tmr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,7 +73,7 @@
         <!--Second View Controller-->
         <scene sceneID="lxk-Qt-bme">
             <objects>
-                <tableViewController id="3sj-dC-dQ9" customClass="SecondViewController" customModule="API_JSON" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SecondViewController" id="3sj-dC-dQ9" customClass="SecondViewController" customModule="API_JSON" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ARM-wu-om8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

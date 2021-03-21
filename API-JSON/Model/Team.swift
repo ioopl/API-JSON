@@ -23,25 +23,6 @@ struct Team: Identifiable, Decodable {
     let founded: Int?
     let venue: String?
     let squad: [Player]?
-    
-}
-
-extension Team {
-    
-    static var stubTeam: Team {
-        let url = Bundle.main.url(forResource: "team", withExtension: "json")!
-        let team: Team = Utilities.loadStub(url: url)
-        return team
-    }
-    
-    static var dummyTeams: [Team] {
-        let teams = ["Arsenal FC", "PSM Makassar", "F.C Barcelona", "Real Madrid C.F", "Bantaeng United", "F.C Internazionale"]
-        
-        return teams.enumerated().map {
-            Team(id: $0.offset, name: $0.element, area: Area(id: 1, name: "England"), shortName: "Arsenal", tla: "ARS", clubColors: "Red/White", crestUrl: "", address: "75 Drayton Park London N5 1BU", phone: "+44 (020) 76195003", website: "http://www.arsenal.com", email: "info@arsenal.co.uk", founded: 1886, venue: "Emirates Stadium", squad: Player.dummyPlayers)
-            
-        }
-    }
 }
 
 
@@ -70,18 +51,6 @@ struct TeamStandingTable: Identifiable, Decodable {
     let goalsFor: Int
     let goalsAgainst: Int
     let goalDifference: Int
-    
-}
-
-extension Standing {
-    
-    static var dummyStandings: Standing {
-        let url = Bundle.main.url(forResource: "standings", withExtension: "json")!
-        let standingResponse: StandingResponse = Utilities.loadStub(url: url)
-        return standingResponse.standings!.first { $0.type == "TOTAL" }!
-        
-    }
-    
 }
 
 
