@@ -9,12 +9,20 @@
 /* Begin PBXBuildFile section */
 		BCA04FCE2603B86D00C63BEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA04FCD2603B86D00C63BEF /* AppDelegate.swift */; };
 		BCA04FD02603B86D00C63BEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA04FCF2603B86D00C63BEF /* SceneDelegate.swift */; };
-		BCA04FD22603B86D00C63BEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA04FD12603B86D00C63BEF /* ViewController.swift */; };
 		BCA04FD52603B86D00C63BEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCA04FD32603B86D00C63BEF /* Main.storyboard */; };
 		BCA04FD72603B86F00C63BEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCA04FD62603B86F00C63BEF /* Assets.xcassets */; };
 		BCA04FDA2603B86F00C63BEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCA04FD82603B86F00C63BEF /* LaunchScreen.storyboard */; };
 		BCA04FE52603B86F00C63BEF /* API_JSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA04FE42603B86F00C63BEF /* API_JSONTests.swift */; };
 		BCA04FF02603B86F00C63BEF /* API_JSONUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA04FEF2603B86F00C63BEF /* API_JSONUITests.swift */; };
+		BCA0500F2604C59900C63BEF /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA0500E2604C59900C63BEF /* DataService.swift */; };
+		BCA050142604C68600C63BEF /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA050132604C68600C63BEF /* Match.swift */; };
+		BCA050192604C6C900C63BEF /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA050182604C6C900C63BEF /* Team.swift */; };
+		BCA0501E2604C6F300C63BEF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA0501D2604C6F300C63BEF /* Player.swift */; };
+		BCA050232604C73000C63BEF /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA050222604C73000C63BEF /* Utilities.swift */; };
+		BCA050282604CCAA00C63BEF /* MatchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA050272604CCAA00C63BEF /* MatchListViewModel.swift */; };
+		BCA050322604CF6300C63BEF /* Competition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA050312604CF6300C63BEF /* Competition.swift */; };
+		BCA050962606A9EB00C63BEF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA050952606A9EB00C63BEF /* HomeViewController.swift */; };
+		BCAC67802607809C0038821F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAC677F2607809C0038821F /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +46,6 @@
 		BCA04FCA2603B86D00C63BEF /* API-JSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "API-JSON.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCA04FCD2603B86D00C63BEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCA04FCF2603B86D00C63BEF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BCA04FD12603B86D00C63BEF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BCA04FD42603B86D00C63BEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BCA04FD62603B86F00C63BEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCA04FD92603B86F00C63BEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +56,15 @@
 		BCA04FEB2603B86F00C63BEF /* API-JSONUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "API-JSONUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCA04FEF2603B86F00C63BEF /* API_JSONUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_JSONUITests.swift; sourceTree = "<group>"; };
 		BCA04FF12603B86F00C63BEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCA0500E2604C59900C63BEF /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		BCA050132604C68600C63BEF /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		BCA050182604C6C900C63BEF /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		BCA0501D2604C6F300C63BEF /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		BCA050222604C73000C63BEF /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		BCA050272604CCAA00C63BEF /* MatchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListViewModel.swift; sourceTree = "<group>"; };
+		BCA050312604CF6300C63BEF /* Competition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Competition.swift; sourceTree = "<group>"; };
+		BCA050952606A9EB00C63BEF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BCAC677F2607809C0038821F /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +115,17 @@
 		BCA04FCC2603B86D00C63BEF /* API-JSON */ = {
 			isa = PBXGroup;
 			children = (
+				BCA050052603BE6C00C63BEF /* Model */,
 				BCA04FCD2603B86D00C63BEF /* AppDelegate.swift */,
 				BCA04FCF2603B86D00C63BEF /* SceneDelegate.swift */,
-				BCA04FD12603B86D00C63BEF /* ViewController.swift */,
 				BCA04FD32603B86D00C63BEF /* Main.storyboard */,
 				BCA04FD62603B86F00C63BEF /* Assets.xcassets */,
 				BCA04FD82603B86F00C63BEF /* LaunchScreen.storyboard */,
 				BCA04FDB2603B86F00C63BEF /* Info.plist */,
+				BCA0500E2604C59900C63BEF /* DataService.swift */,
+				BCA050222604C73000C63BEF /* Utilities.swift */,
+				BCA050952606A9EB00C63BEF /* HomeViewController.swift */,
+				BCAC677F2607809C0038821F /* SecondViewController.swift */,
 			);
 			path = "API-JSON";
 			sourceTree = "<group>";
@@ -126,6 +146,18 @@
 				BCA04FF12603B86F00C63BEF /* Info.plist */,
 			);
 			path = "API-JSONUITests";
+			sourceTree = "<group>";
+		};
+		BCA050052603BE6C00C63BEF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BCA050132604C68600C63BEF /* Match.swift */,
+				BCA050182604C6C900C63BEF /* Team.swift */,
+				BCA0501D2604C6F300C63BEF /* Player.swift */,
+				BCA050272604CCAA00C63BEF /* MatchListViewModel.swift */,
+				BCA050312604CF6300C63BEF /* Competition.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +290,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCA04FD22603B86D00C63BEF /* ViewController.swift in Sources */,
 				BCA04FCE2603B86D00C63BEF /* AppDelegate.swift in Sources */,
+				BCA0500F2604C59900C63BEF /* DataService.swift in Sources */,
+				BCAC67802607809C0038821F /* SecondViewController.swift in Sources */,
+				BCA050322604CF6300C63BEF /* Competition.swift in Sources */,
+				BCA050192604C6C900C63BEF /* Team.swift in Sources */,
 				BCA04FD02603B86D00C63BEF /* SceneDelegate.swift in Sources */,
+				BCA0501E2604C6F300C63BEF /* Player.swift in Sources */,
+				BCA050232604C73000C63BEF /* Utilities.swift in Sources */,
+				BCA050282604CCAA00C63BEF /* MatchListViewModel.swift in Sources */,
+				BCA050962606A9EB00C63BEF /* HomeViewController.swift in Sources */,
+				BCA050142604C68600C63BEF /* Match.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
