@@ -1,9 +1,9 @@
 import Foundation
 
 
-struct FootballDataService {
+struct DataWebService {
     
-    static let shared = FootballDataService()
+    static let shared = DataWebService()
     private let urlSession = URLSession.shared
     private let apiKey = "08ccc29e7aba4ff2840a3da31e6e7425"
     private let baseURL = "https://api.football-data.org/v2/"
@@ -20,8 +20,8 @@ struct FootballDataService {
         let today = Date()
         let tenDays = today.addingTimeInterval(86400 * (isUpcoming ? 10 : -10))
         
-        let todayText = FootballDataService.dateFormatter.string(from: today)
-        let tenDaysText = FootballDataService.dateFormatter.string(from: tenDays)
+        let todayText = DataWebService.dateFormatter.string(from: today)
+        let tenDaysText = DataWebService.dateFormatter.string(from: tenDays)
         return isUpcoming ? (todayText, tenDaysText) : (tenDaysText, todayText)
     }
     

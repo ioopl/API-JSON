@@ -11,7 +11,7 @@ class MatchListViewModel {
     var isLoading: Bool = false
     weak var delegate: MatchListViewModelDelegate?
     
-    var service = FootballDataService.shared
+    var service = DataWebService.shared
     
         func fetchUpcomingMatches(competitionId: Int) {
             error = nil
