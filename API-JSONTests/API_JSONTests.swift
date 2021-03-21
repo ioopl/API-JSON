@@ -34,17 +34,17 @@ class API_JSONTests: XCTestCase {
         let competition = Competition.defaultCompetitions[0]
         viewModel.fetchLatestMatches(competitionId: competition.id)
         dataService.fetchLatestMatches(competitionId: 1) { (response) in
-            print(response)
-            // what to test here
+            _ = response.map { (match)  in
+                XCTAssertEqual(match[0].homeTeam.id, 1)
+                XCTAssertEqual(match[0].awayTeam.id, 2)
+            }
         }
-
+    }
         
         
 //        let photo = Photo(id: "1", title: "photo", thumbnailUrl: "", fullSizeUrl: "")
 //        detailViewController.detailItem = photo
 //        XCTAssertEqual(detailViewController.detailDescriptionLabel.text, detailViewController.detailItem?.title)
-
-    }
     
 
     override func tearDownWithError() throws {
