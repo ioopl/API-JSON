@@ -13,6 +13,10 @@ class API_JSONTests: XCTestCase {
         if #available(iOS 13.0, *) {
             homeViewController = storyBoard.instantiateViewController(identifier: "HomeViewController")
             homeViewController.loadViewIfNeeded()
+            
+            secondViewController = storyBoard.instantiateViewController(identifier: "SecondViewController")
+            secondViewController.loadViewIfNeeded()
+            
         } else {
             // Fallback on earlier versions
         }
@@ -26,9 +30,12 @@ class API_JSONTests: XCTestCase {
     func testHomeViewControllerHasChildView() {
         XCTAssertNotNil(homeViewController.tableView)
     }
+
+    func testSecondViewControllerHasChildView() {
+        XCTAssertNotNil(secondViewController.tableView)
+    }
     
-    
-    func testHomeTableViewItemUpdatesTextLabel() {
+    func testHomeTableViewItemUpdatesText() {
         let viewModel = MatchListViewModel()
         
         let competition = Competition.defaultCompetitions[0]
@@ -40,14 +47,9 @@ class API_JSONTests: XCTestCase {
             }
         }
     }
-        
-        
-//        let photo = Photo(id: "1", title: "photo", thumbnailUrl: "", fullSizeUrl: "")
-//        detailViewController.detailItem = photo
-//        XCTAssertEqual(detailViewController.detailDescriptionLabel.text, detailViewController.detailItem?.title)
-    
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        homeViewController = nil
+        secondViewController = nil
     }
 }
