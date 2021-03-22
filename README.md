@@ -5,10 +5,10 @@ This Project is to fetch Football JSON Data from https://www.football-data.org
 
 ✅ Using HTTP Auth Header token to authenticate the network requests.
 
-✅ Unit Tests to Inject fake WebService and actuall ViewModel delegate method call to test the WebService returns Mock Data and the VieModel Delegate obliges to update UI.
+✅ Unit Tests to Inject fake WebService and actuall ViewModel delegate method calls to test the WebService which returns Mock Data and the ViewModel Delegate obliges to update the UI.
 
 Whats left to do?
 
-Make the App more accessible by adding accessibility labels, traits and values and then Unit Test them using Accessibility Identifiers. 
+Make the App more accessible by adding Accessibility labels, traits and values and then Unit Test them using Accessibility Identifiers. 
 
 Add more tests around the Data Web Service API calls.
