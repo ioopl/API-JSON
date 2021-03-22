@@ -53,7 +53,20 @@ class SecondViewController: UITableViewController {
 extension SecondViewController: MatchListViewModelDelegate {
     func callbackWhenDataAvailable(matches: [Match]) {
         matchesData = matches
+        if matches.count <= 0 {
+            handleNoData()
+        }
         tableView.reloadData()
         tableView.hideActivityIndicator()
+    }
+}
+
+extension SecondViewController {
+    private func handleNoData() {
+        let ac = UIAlertController(title: "No Match",
+                                   message: "Nothing in Next few days",
+                                   preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Close", style: .cancel))
+        present(ac, animated: true)
     }
 }
