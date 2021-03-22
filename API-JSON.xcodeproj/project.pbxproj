@@ -119,6 +119,9 @@
 		BCA04FCC2603B86D00C63BEF /* API-JSON */ = {
 			isa = PBXGroup;
 			children = (
+				BCAC67AE2608B4A20038821F /* WebService */,
+				BCAC67AD2608B4370038821F /* Views */,
+				BCAC67AC2608B41B0038821F /* ViewModel */,
 				BCA050052603BE6C00C63BEF /* Model */,
 				BCA04FCD2603B86D00C63BEF /* AppDelegate.swift */,
 				BCA04FCF2603B86D00C63BEF /* SceneDelegate.swift */,
@@ -126,10 +129,7 @@
 				BCA04FD62603B86F00C63BEF /* Assets.xcassets */,
 				BCA04FD82603B86F00C63BEF /* LaunchScreen.storyboard */,
 				BCA04FDB2603B86F00C63BEF /* Info.plist */,
-				BCA0500E2604C59900C63BEF /* DataWebService.swift */,
 				BCA050222604C73000C63BEF /* Utilities.swift */,
-				BCA050952606A9EB00C63BEF /* HomeViewController.swift */,
-				BCAC677F2607809C0038821F /* SecondViewController.swift */,
 			);
 			path = "API-JSON";
 			sourceTree = "<group>";
@@ -159,11 +159,35 @@
 				BCA050132604C68600C63BEF /* Match.swift */,
 				BCA050182604C6C900C63BEF /* Team.swift */,
 				BCA0501D2604C6F300C63BEF /* Player.swift */,
-				BCA050272604CCAA00C63BEF /* MatchListViewModel.swift */,
 				BCA050312604CF6300C63BEF /* Competition.swift */,
 				BCAC679D2607FC520038821F /* FakeModelStubs.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BCAC67AC2608B41B0038821F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BCA050272604CCAA00C63BEF /* MatchListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BCAC67AD2608B4370038821F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BCA050952606A9EB00C63BEF /* HomeViewController.swift */,
+				BCAC677F2607809C0038821F /* SecondViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BCAC67AE2608B4A20038821F /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				BCA0500E2604C59900C63BEF /* DataWebService.swift */,
+			);
+			path = WebService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
