@@ -56,18 +56,9 @@ class API_JSONTests: XCTestCase, MatchListViewModelDelegate {
                 
         viewModel.delegate = self
         
-        viewModel.fetchLatestMatches(competitionId: competition.id)
+        viewModel.asyncFetchLatestMatches(competitionId: competition.id)
                 
         XCTAssertEqual(data?.first, dataService.expectedMatch)
-        
-        
-        // Real Web Service Call so commented out
-//        dataService.fetchLatestMatches(competitionId: 1) { (response) in
-//            _ = response.map { (match)  in
-//                XCTAssertEqual(match[0].homeTeam.id, 1)
-//                XCTAssertEqual(match[0].awayTeam.id, 2)
-//            }
-//        }
     }
 
 

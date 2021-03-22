@@ -6,7 +6,7 @@ class API_JSONUITests: XCTestCase {
         continueAfterFailure = false
     }
 
-    func testTabBarItemsExistsAndTapped() throws {
+    func testTabBarItemsExistsAndIsTappable() throws {
         let app = XCUIApplication()
         app.launch()
         
