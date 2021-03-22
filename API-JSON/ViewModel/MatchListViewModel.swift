@@ -13,8 +13,7 @@ class MatchListViewModel {
     
     var service: WebService = DataWebService.shared
     
-    
-        func fetchUpcomingMatches(competitionId: Int) {
+        func asyncFetchUpcomingMatches(competitionId: Int) {
             error = nil
             isLoading = true
     
@@ -35,23 +34,21 @@ class MatchListViewModel {
             }
         }
     
-    func fetchLatestMatches(competitionId: Int) {
+    func asyncFetchLatestMatches(competitionId: Int) {
         error = nil
         isLoading = true
         
         service.fetchLatestMatches(competitionId: competitionId) { (result) in
-            //DispatchQueue.main.async {
                 self.isLoading = false
                 
                 switch result {
                 case .success(let matches):
-                    self.matches = matches.reversed()
+                    self.matches = matches
                     self.delegate?.callbackWhenDataAvailable(matches: matches)
                     
                 case .failure(let error):
                     self.error = error
                 }
-            //}
         }
     }
 }
