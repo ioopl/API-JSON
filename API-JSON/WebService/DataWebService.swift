@@ -25,6 +25,7 @@ struct DataWebService: DataWebServiceDelegate {
 
     internal func startEndDateFilter(isUpcoming: Bool) -> (String, String) {
         let today = Date()
+        // Seconds: 86400 = 1440 = 24 hours
         let tenDays = today.addingTimeInterval(86400 * (isUpcoming ? 10 : -10))
         
         let todayText = DataWebService.dateFormatter.string(from: today)
@@ -38,8 +39,9 @@ struct DataWebService: DataWebServiceDelegate {
         return formatter
     }()
     
-    // Asynchronous Execution: We are executing the closure asynchronously on dispatch queue, the queue will hold the closure in memory to be used in future. In this case we have no idea when the closure will get executed.
-    // also note Asynchronously starting a task will directly return on the calling thread without blocking
+    // Asynchronous Execution: Executing the closure asynchronously on dispatch queue, the queue will hold the closure in memory to be used in future. Currently we have no idea when the closure will get executed.
+    // Asynchronously starting a task will directly return on the calling thread without blocking
+    //@escaping - This has to be escaping closure as it takes time over network
 
     func fetchLatestMatches(competitionId: Int, completion: @escaping(Result<[Match], Error>) -> ()) {
         let (tenDaysAgoText, todayText) = startEndDateFilter(isUpcoming: false)
@@ -72,7 +74,6 @@ struct DataWebService: DataWebServiceDelegate {
         }
     }
     
-    //@escaping - This has to be escaping closure as it takes time over network
     func fetchData<D: Decodable>(request: URLRequest, completion: @escaping(Result<D, Error>) -> ()) {
         var urlRequest = request
         urlRequest.addValue(apiKey, forHTTPHeaderField: "X-Auth-Token")
