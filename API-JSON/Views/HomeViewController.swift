@@ -4,8 +4,6 @@ class HomeViewController: UITableViewController {
 
     var modelListViewModel = MatchListViewModel()
     var matchesData = [Match]()
-    
-    var inputDictionaryTable: [String:Int] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,15 +17,13 @@ class HomeViewController: UITableViewController {
         modelListViewModel = MatchListViewModel()
         modelListViewModel.delegate = self
         let competition = Competition.defaultCompetitions[0]
-        // ASYNC Call
-        modelListViewModel.fetchLatestMatches(competitionId: competition.id)
+        modelListViewModel.asyncFetchLatestMatches(competitionId: competition.id)
 
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        print(inputDictionaryTable)
     }
 
     // MARK: - Table view data source
@@ -42,35 +38,23 @@ class HomeViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-
         
         cell.textLabel?.text =
             matchesData[indexPath.row].homeTeam.name
             + " vs "
             + matchesData[indexPath.row].awayTeam.name
-
+        
         var winningTeam = ""
         if (matchesData[indexPath.row].score.isHomeWinner) {
             winningTeam = matchesData[indexPath.row].homeTeam.name
-            var numberOfWins = 0
-            numberOfWins = inputDictionaryTable[matchesData[indexPath.row].homeTeam.name] ?? 0
-            inputDictionaryTable[matchesData[indexPath.row].homeTeam.name] = numberOfWins
-            
         } else if (matchesData[indexPath.row].score.isAwayWinner) {
             winningTeam = matchesData[indexPath.row].awayTeam.name
-            
-            let numberOfWins = inputDictionaryTable[matchesData[indexPath.row].awayTeam.name]
-            inputDictionaryTable[matchesData[indexPath.row].awayTeam.name] = numberOfWins ?? 0 + 1
         } else {
             winningTeam = "None"
         }
         
         cell.detailTextLabel?.text = " Winning Team = " + winningTeam
-        
-        for (key, value) in inputDictionaryTable {
-            print("key :", key)
-            print("value :", value)
-        }
+                
         return cell
     }
 }
@@ -80,8 +64,21 @@ extension HomeViewController: MatchListViewModelDelegate {
     func callbackWhenDataAvailable(matches: [Match]) {
         DispatchQueue.main.async {
             self.matchesData = matches
+            if matches.count <= 0 {
+                self.handleNoData()
+            }
             self.tableView.reloadData()
             self.tableView.hideActivityIndicator()
         }
+    }
+}
+
+extension HomeViewController {
+    private func handleNoData() {
+        let ac = UIAlertController(title: "No Match",
+                                   message: "Nothing in Next few days",
+                                   preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Close", style: .cancel))
+        present(ac, animated: true)
     }
 }

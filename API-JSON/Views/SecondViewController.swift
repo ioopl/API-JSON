@@ -26,7 +26,7 @@ class SecondViewController: UITableViewController {
         
         let competition = Competition.defaultCompetitions[0]
         // ASYNC Call
-        modelListViewModel.fetchUpcomingMatches(competitionId: competition.id)
+        modelListViewModel.asyncFetchUpcomingMatches(competitionId: competition.id)
     }
     
     // MARK: - Table view data source
