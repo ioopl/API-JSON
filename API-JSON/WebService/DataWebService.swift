@@ -23,6 +23,7 @@ struct DataWebService: DataWebServiceDelegate {
     
     private init() {}
 
+    /// The API has a limitation. It cannot fetch Data beyond 10 days. So to get 30 days of history, we will need to make 3 API calls of 10 days each, and then merge the results to show a history of 10 days. 
     internal func startEndDateFilter(isUpcoming: Bool) -> (String, String) {
         let today = Date()
         // Seconds: 86400 = 1440 = 24 hours (todays date +/- 10 days) as API only allows only 10 days of data in a call. 
