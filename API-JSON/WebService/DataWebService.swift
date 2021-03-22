@@ -25,7 +25,7 @@ struct DataWebService: DataWebServiceDelegate {
 
     internal func startEndDateFilter(isUpcoming: Bool) -> (String, String) {
         let today = Date()
-        // Seconds: 86400 = 1440 = 24 hours
+        // Seconds: 86400 = 1440 = 24 hours (todays date +/- 10 days) as API only allows only 10 days of data in a call. 
         let tenDays = today.addingTimeInterval(86400 * (isUpcoming ? 10 : -10))
         
         let todayText = DataWebService.dateFormatter.string(from: today)
