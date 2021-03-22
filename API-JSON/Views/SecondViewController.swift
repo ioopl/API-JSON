@@ -10,6 +10,9 @@ class SecondViewController: UITableViewController {
         super.viewDidLoad()
         // hide empty tableview cells
         tableView.tableFooterView = UIView()
+        
+        tableView.showActivityIndicator()
+
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -51,5 +54,6 @@ extension SecondViewController: MatchListViewModelDelegate {
     func callbackWhenDataAvailable(matches: [Match]) {
         matchesData = matches
         tableView.reloadData()
+        tableView.hideActivityIndicator()
     }
 }
