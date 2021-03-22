@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC73A11A260913C80075E019 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC73A119260913C80075E019 /* UITableViewExtension.swift */; };
 		BCA04FCE2603B86D00C63BEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA04FCD2603B86D00C63BEF /* AppDelegate.swift */; };
 		BCA04FD02603B86D00C63BEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA04FCF2603B86D00C63BEF /* SceneDelegate.swift */; };
 		BCA04FD52603B86D00C63BEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCA04FD32603B86D00C63BEF /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC73A119260913C80075E019 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		BCA04FCA2603B86D00C63BEF /* API-JSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "API-JSON.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCA04FCD2603B86D00C63BEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCA04FCF2603B86D00C63BEF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC73A118260913A70075E019 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BC73A119260913C80075E019 /* UITableViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		BCA04FC12603B86D00C63BEF = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +129,7 @@
 		BCA04FCC2603B86D00C63BEF /* API-JSON */ = {
 			isa = PBXGroup;
 			children = (
+				BC73A118260913A70075E019 /* Extensions */,
 				BCAC67AE2608B4A20038821F /* WebService */,
 				BCAC67AD2608B4370038821F /* Views */,
 				BCAC67AC2608B41B0038821F /* ViewModel */,
@@ -326,6 +337,7 @@
 				BCA050322604CF6300C63BEF /* Competition.swift in Sources */,
 				BCA050192604C6C900C63BEF /* Team.swift in Sources */,
 				BCA04FD02603B86D00C63BEF /* SceneDelegate.swift in Sources */,
+				BC73A11A260913C80075E019 /* UITableViewExtension.swift in Sources */,
 				BCA0501E2604C6F300C63BEF /* Player.swift in Sources */,
 				BCA050232604C73000C63BEF /* Utilities.swift in Sources */,
 				BCA050282604CCAA00C63BEF /* MatchListViewModel.swift in Sources */,
