@@ -11,7 +11,6 @@ class HomeViewController: UITableViewController {
         super.viewDidLoad()
         // hide empty tableview cells
         tableView.tableFooterView = UIView()
-        
         tableView.showActivityIndicator()
 
         tableView.delegate = self

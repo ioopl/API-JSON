@@ -8,6 +8,11 @@ class SecondViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         // hide empty tableview cells
         tableView.tableFooterView = UIView()
         
@@ -22,11 +27,6 @@ class SecondViewController: UITableViewController {
         let competition = Competition.defaultCompetitions[0]
         // ASYNC Call
         modelListViewModel.fetchUpcomingMatches(competitionId: competition.id)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
     }
     
     // MARK: - Table view data source
