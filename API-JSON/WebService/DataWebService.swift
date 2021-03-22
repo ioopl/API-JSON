@@ -2,13 +2,14 @@ import Foundation
 
 public typealias dataResponseHandler = (Result<[Match], Error>)
 
-public protocol DataWebServiceDelegate {
+public protocol WebService {
     func startEndDateFilter(isUpcoming: Bool) -> (String, String)
+    
     func fetchLatestMatches(competitionId: Int, completion: @escaping(dataResponseHandler) -> ())
     func fetchUpcomingMatches(competitionId: Int, completion: @escaping(Result<[Match], Error>) -> ())
 }
 
-struct DataWebService: DataWebServiceDelegate {
+struct DataWebService: WebService {
     
     static let shared = DataWebService()
     private let urlSession = URLSession.shared

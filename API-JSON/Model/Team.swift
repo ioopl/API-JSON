@@ -1,11 +1,11 @@
 import Foundation
 
-struct Area: Identifiable, Decodable {
+struct Area: Identifiable, Decodable, Equatable {
     let id: Int
     let name: String
 }
 
-struct Team: Identifiable, Decodable {
+struct Team: Identifiable, Decodable, Equatable {
     
     let id: Int
     let name: String
@@ -26,7 +26,7 @@ struct Team: Identifiable, Decodable {
 }
 
 
-struct Standing: Identifiable, Decodable {
+struct Standing: Identifiable, Decodable, Equatable {
     
     var id: String {
         "\(type)-\(stage)"
@@ -37,7 +37,7 @@ struct Standing: Identifiable, Decodable {
     let table: [TeamStandingTable]
 }
 
-struct TeamStandingTable: Identifiable, Decodable {
+struct TeamStandingTable: Identifiable, Decodable, Equatable {
     
     var id: Int { team.id }
     let position: Int

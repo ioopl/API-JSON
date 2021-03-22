@@ -4,7 +4,7 @@ struct MatchResponse: Decodable {
     var matches: [Match]
 }
 
-public struct Match: Identifiable, Decodable {
+public struct Match: Identifiable, Decodable, Equatable {
     
     public var id: Int
     var utcDate: Date
@@ -19,7 +19,7 @@ public struct Match: Identifiable, Decodable {
     var score: MatchScore
 }
 
-struct MatchScore: Decodable {
+struct MatchScore: Decodable, Equatable {
     var winner: String?
     var duration: String?
     
@@ -37,7 +37,7 @@ struct MatchScore: Decodable {
     }
 }
 
-struct MatchScoreTime: Decodable {
+struct MatchScoreTime: Decodable, Equatable {
     
     var homeTeam: Int?
     var awayTeam: Int?

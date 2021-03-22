@@ -11,7 +11,8 @@ class MatchListViewModel {
     var isLoading: Bool = false
     weak var delegate: MatchListViewModelDelegate?
     
-    var service = DataWebService.shared
+    var service: WebService = DataWebService.shared
+    
     
         func fetchUpcomingMatches(competitionId: Int) {
             error = nil
@@ -39,7 +40,7 @@ class MatchListViewModel {
         isLoading = true
         
         service.fetchLatestMatches(competitionId: competitionId) { (result) in
-            DispatchQueue.main.async {
+            //DispatchQueue.main.async {
                 self.isLoading = false
                 
                 switch result {
@@ -50,7 +51,7 @@ class MatchListViewModel {
                 case .failure(let error):
                     self.error = error
                 }
-            }
+            //}
         }
     }
 }

@@ -79,8 +79,10 @@ class HomeViewController: UITableViewController {
 
 extension HomeViewController: MatchListViewModelDelegate {
     func callbackWhenDataAvailable(matches: [Match]) {
-        matchesData = matches
-        tableView.reloadData()
-        tableView.hideActivityIndicator()
+        DispatchQueue.main.async {
+            self.matchesData = matches
+            self.tableView.reloadData()
+            self.tableView.hideActivityIndicator()
+        }
     }
 }
