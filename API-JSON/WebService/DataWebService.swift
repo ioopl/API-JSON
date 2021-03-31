@@ -43,7 +43,9 @@ struct DataWebService: WebService {
     
     // Asynchronous Execution: Executing the closure asynchronously on dispatch queue, the queue will hold the closure in memory to be used in future. Currently we have no idea when the closure will get executed.
     // Asynchronously starting a task will directly return on the calling thread without blocking
-    //@escaping - This has to be escaping closure as it takes time over network
+    // @escaping - This has to be escaping closure as it takes time over network
+    /* @escaping closures: When passing a closure as the function argument, the closure is being preserved to be executed later and the function's body gets executed, returning the compiler back. As the execution ends, the scope of the passed closure exists and have existence in memory, till the closure gets executed.*/
+
 
     func fetchLatestMatches(competitionId: Int, completion: @escaping(Result<[Match], Error>) -> ()) {
         let (tenDaysAgoText, todayText) = startEndDateFilter(isUpcoming: false)
