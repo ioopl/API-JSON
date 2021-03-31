@@ -26,7 +26,7 @@ Add more tests around the Data Web Service API calls.
 
 <b> Example of Dependency Injection and Protocols used in the Project </b>
 <br/>
-Note:  the RequestSerilizer() can be replaced with any other type as long as it conforms to Serializer protocol   
+Note:  the `RequestSerilizer()` can be replaced with any other type as long as it conforms to Serializer protocol.   
 
 ![Screenshot 2021-03-31 at 20 40 53](https://user-images.githubusercontent.com/503469/113201648-a6a13d80-9261-11eb-8f4e-accb50105b40.png)
 
